@@ -15,7 +15,7 @@ CHEVRIER Jean-Christophe
 ### Installation et execution
     mvn package && java -jar .\target\courses-management-2-0.0.1-SNAPSHOT.jar
 ### Utilisateur temporaire de test
-    login : admin
-    mot de passe : admin
+    login : etudiant_test
+    mot de passe : etudiant_test
 ### Route pour obtenir le planning
     http://localhost:8081/seances

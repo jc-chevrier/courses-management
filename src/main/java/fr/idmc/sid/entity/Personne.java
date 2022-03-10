@@ -3,6 +3,7 @@ package fr.idmc.sid.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -13,19 +14,21 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Seance {
+public class Personne {
     @Id
     private Long id;
 
-    private Date dateDebut;
+    private String identifiant;
 
-    private Date dateFin;
+    private String nom;
 
-    @ManyToOne
-    @JoinColumn(name = "ID_SALLE", referencedColumnName = "ID")
-    private Salle salle;
+    private String prenom;
 
     @ManyToOne
-    @JoinColumn(name = "ID_COURS", referencedColumnName = "ID")
-    private Cours cours;
+    @JoinColumn(name = "ID_ROLE", referencedColumnName = "ID")
+    private Role role;
+
+    @ManyToOne
+    @JoinColumn(name = "ID_FORMATION", referencedColumnName = "ID")
+    private Formation formation;
 }

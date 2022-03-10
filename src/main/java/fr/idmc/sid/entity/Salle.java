@@ -7,25 +7,18 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import java.util.Date;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Seance {
+public class Salle {
     @Id
     private Long id;
 
-    private Date dateDebut;
-
-    private Date dateFin;
+    private Long numero;
 
     @ManyToOne
-    @JoinColumn(name = "ID_SALLE", referencedColumnName = "ID")
-    private Salle salle;
-
-    @ManyToOne
-    @JoinColumn(name = "ID_COURS", referencedColumnName = "ID")
-    private Cours cours;
+    @JoinColumn(name = "ID_BATIMENT", referencedColumnName = "ID")
+    private Batiment batiment;
 }
